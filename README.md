@@ -1,6 +1,6 @@
 # PHP-FPM 8.1
 
-[![Build Status](https://travis-ci.org/devilbox/docker-php-fpm-8.1.svg?branch=master)](https://travis-ci.org/devilbox/docker-php-fpm-8.1)
+[![Build Status](https://travis-ci.com/devilbox/docker-php-fpm-8.1.svg?branch=master)](https://travis-ci.com/devilbox/docker-php-fpm-8.1)
 [![Tag](https://img.shields.io/github/tag/devilbox/docker-php-fpm-8.1.svg)](https://github.com/devilbox/docker-php-fpm-8.1/releases)
 [![Gitter](https://badges.gitter.im/devilbox/Lobby.svg)](https://gitter.im/devilbox/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Discourse](https://img.shields.io/discourse/https/devilbox.discourse.group/status.svg?colorB=%234CB697)](https://devilbox.discourse.group)
@@ -143,7 +143,7 @@ echo "<?php echo 'hello world';" > htdocs/index.php
 
 #### 2. Start PHP container
 ```bash
-docker run -d --rm --name devilbox-php-fpm-8-0 \
+docker run -d --rm --name devilbox-php-fpm-8-1 \
   -v $(pwd)/htdocs:/var/www/default/htdocs devilbox/php-fpm-8.1
 ```
 
@@ -152,9 +152,9 @@ docker run -d --rm --name devilbox-php-fpm-8-0 \
 docker run -d --rm --name devilbox-nginx-stable \
   -v $(pwd)/htdocs:/var/www/default/htdocs \
   -e PHP_FPM_ENABLE=1 \
-  -e PHP_FPM_SERVER_ADDR=devilbox-php-fpm-8-0 \
+  -e PHP_FPM_SERVER_ADDR=devilbox-php-fpm-8-1 \
   -p 8080:80 \
-  --link devilbox-php-fpm-8-0 \
+  --link devilbox-php-fpm-8-1 \
   devilbox/nginx-stable
 ```
 
