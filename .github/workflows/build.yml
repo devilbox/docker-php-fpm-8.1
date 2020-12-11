@@ -112,7 +112,7 @@ jobs:
           PAUSE: 10
 
       # ------------------------------------------------------------
-      # Testing
+      # Test
       # ------------------------------------------------------------
       - name: Test Docker Image
         run: |
@@ -155,9 +155,8 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # Push build artifacts
+      # Deploy
       # ------------------------------------------------------------
-      # Only run this, if the PR was created by the repo owner
       - name: Publish images (only repo owner)
         run: |
           retry() {
