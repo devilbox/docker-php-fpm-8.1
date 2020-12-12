@@ -37,16 +37,15 @@ help:
 lint: lint-workflow
 
 lint-workflow:
-	@GIT_BRANCH="$$( git branch | grep '^*' | awk -F' ' '{print $$2}' )"; \
-	if echo "$${GIT_BRANCH}" | grep -E '^release-[.0-9]+$$' >/dev/null; then \
-		GIT_TAG="$$( echo "$${GIT_BRANCH}" | sed 's/^release-//g' )"; \
-		if ! grep 'refs:' -A 100 .github/workflows/nightly.yml \
-			| grep  "          - '$${GIT_TAG}'" >/dev/null; then \
-			echo "[ERR] New Tag required in .github/workflows/nightly.yml: $${GIT_TAG}"; \
-			exit 1; \
-		else \
-			echo "[OK] Git Tag present in .github/workflows/nightly.yml: $${GIT_TAG}"; \
-		fi \
+	@\
+	GIT_CURR_TAG="$$( git tag | sort -V | tail -1 )"; \
+	GIT_NEXT_TAG="0$$( echo "$${GIT_CURR_TAG} + 0.1" | bc )"; \
+	if ! grep 'refs:' -A 100 .github/workflows/nightly.yml \
+		| grep  "          - '$${GIT_NEXT_TAG}'" >/dev/null; then \
+		echo "[ERR] New Tag required in .github/workflows/nightly.yml: $${GIT_NEXT_TAG}"; \
+		exit 1; \
+	else \
+		echo "[OK] Git Tag present in .github/workflows/nightly.yml: $${GIT_NEXT_TAG}"; \
 	fi
 
 
