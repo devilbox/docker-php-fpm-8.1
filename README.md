@@ -1,7 +1,9 @@
 # PHP-FPM 8.1
 
+[![lint](https://github.com/devilbox/docker-php-fpm-8.1/workflows/lint/badge.svg)](https://github.com/devilbox/docker-php-fpm-8.1/actions?query=workflow%3Alint)
 [![build](https://github.com/devilbox/docker-php-fpm-8.1/workflows/build/badge.svg)](https://github.com/devilbox/docker-php-fpm-8.1/actions?query=workflow%3Abuild)
 [![nightly](https://github.com/devilbox/docker-php-fpm-8.1/workflows/nightly/badge.svg)](https://github.com/devilbox/docker-php-fpm-8.1/actions?query=workflow%3Anightly)
+
 [![Tag](https://img.shields.io/github/tag/devilbox/docker-php-fpm-8.1.svg)](https://github.com/devilbox/docker-php-fpm-8.1/releases)
 [![Gitter](https://badges.gitter.im/devilbox/Lobby.svg)](https://gitter.im/devilbox/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Discourse](https://img.shields.io/discourse/https/devilbox.discourse.group/status.svg?colorB=%234CB697)](https://devilbox.discourse.group)
@@ -23,6 +25,7 @@ Have a look at the following similar Devilbox base images for which no official 
 * [PHP-FPM 5.3](https://github.com/devilbox/docker-php-fpm-5.3)
 * [PHP-FPM 7.4](https://github.com/devilbox/docker-php-fpm-7.4)
 * [PHP-FPM 8.0](https://github.com/devilbox/docker-php-fpm-8.0)
+* [PHP-FPM 8.1](https://github.com/devilbox/docker-php-fpm-8.1)
 
 In case you are looking for development and production ready PHP-FPM images for all versions,
 which have a vast amount of modules enabled by default go here:
